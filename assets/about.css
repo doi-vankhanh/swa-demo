@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1100px; /* Chiều rộng tối đa của nội dung */
+  margin: 0 auto; /* Tự động căn giữa */
+  padding: 0 20px; /* Khoảng cách 2 bên để không bị dính sát lề */
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Clean height, no bloat */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+}
+
+.cart-icon svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -18px;
+  right: -15px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.section-title {
+  text-align: center; 
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px; 
+}
+
+/* hero */
+.btn a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* about */
+.about-section {
+  padding: 60px 0; 
+  background-color: #ffffff; 
+}
+
+.about-layout {
+  display: flex;
+  align-items: center; /* Căn giữa 2 cột theo chiều dọc */
+  gap: 40px; /* Khoảng cách giữa 2 cột */
+}
+
+/* 2 cột sẽ tự động chia 50/50 */
+.about-image,
+.about-content {
+  flex: 1; /* 2 cột rộng bằng nhau */
+}
+
+.about-image img {
+  max-width: 100%; /* Đảm bảo ảnh co giãn theo cột */
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.about-content h3 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+.cta-button {
+  display: inline-block;
+  background-color: rgb(115, 95, 244);
+  color: #ffffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold; 
+  transition: background-color 0.3s ease;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.cta-button:hover {
+  background-color: rgb(45, 30, 143);
+}
+
+/*mobbi */
+ @media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    margin-left: 0;
+  }
+
+  .cart-link {
+    margin-left: 0;
+  }
+
+  /* Cho phần giới thiệu */
+  .about-layout {
+    flex-direction: column; 
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .about-content {
+    text-align: center; 
+  }
+} 
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #10ac84;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

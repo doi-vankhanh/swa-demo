@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arabbit shop</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/mobi.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo">
+          <img
+            src="./img/logo.jpg"
+            alt="logo"
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 10px;
+            "
+          />
+          Arabbit shop
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav-links">
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#products">Sản phẩm</a></li>
+          <li><a href="./app/about.html">Giới thiệu</a></li>
+        </ul>
+
+        <a href="#" class="cart-icon" onclick="openCart(event)">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <!-- Hamburger menu toggle -->
+      <div class="menu-toggle">☰</div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide"></div>
+        <div
+          class="hero-slide"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(66, 184, 156, 0.9),
+              rgba(83, 123, 51, 0.9)
+            );
+          "
+        ></div>
+        <!-- style="background-image: url('/img/alice\ mushroom\ nam\ do.jpg'); background-size: cover; background-position: center;" -->
+        <div
+          class="hero-slide"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(250, 112, 154, 0.9),
+              rgba(222, 30, 161, 0.9)
+            );
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(48, 117, 208, 0.9),
+              rgba(51, 8, 103, 0.9)
+            );
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(160, 85, 85, 0.9),
+              rgba(213, 80, 80, 0.9)
+            );
+          "
+        ></div>
+      </div>
+      <div class="hero-content">
+        <h1>Chào mừng đến với Arabbit Shop</h1>
+        <p>Khám phá những trang sức đẹp và tốt nhất với giá cả hợp lý</p>
+        <button
+          class="btn"
+          onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})"
+        >
+          Mua sắm ngay
+        </button>
+      </div>
+      <div class="hero-dots" id="heroDots"></div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+      <h2 class="section-title">Sản phẩm nổi bật</h2>
+
+      <!-- search-box -->
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Tìm sản phẩm ..."
+          onkeyup="searchProducts()"
+        />
+      </div>
+
+      <!-- product-grid -->
+      <div class="product-grid" id="productGrid">
+        <div
+          class="product-card"
+          data-name="vòng alice"
+          onclick="openProductModal('Vòng alice', '', '2.990.000₫', 'love mushroom, cute ring', 'url(./img/alice-mushroom.jpg)', ['Mặt nấm đỏ', 'Vừa xinh', 'Vừa sang', 'Vừa xịn', 'Khí chất cao nhã', 'Phù hợp mọi trang phục'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/alice-mushroom.jpg"
+              alt="Vong alice"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Vòng Alice</div>
+            <div class="product-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
+              dolorem.
+            </div>
+            <div class="product-footer">
+              <div class="price">2.990.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Vòng alice')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="vòng teddy"
+          onclick="openProductModal('Vòng teddy', '', '1.990.000₫', 'Biểu tượng đặc trưng là con gấu ', 'url(./img/teddy-pink.jpg)', ['Mặt dây chuyền có bé gấu xinh', 'Viên đá hình trái tim', 'Màu sắc nỗi bật', 'Không phai', 'Làm nỗi bật khí chất của bản thân bạn'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/teddy-pink.jpg"
+              alt="Vong teddy pink"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Vòng Teddy</div>
+            <div class="product-desc">Lorem ipsum dolor sit amet consectetur.</div>
+            <div class="product-footer">
+              <div class="price">1.990.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Vòng teddy pink')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="vòng cosnetella"
+          onclick="openProductModal('Vòng cosnetella', '', '5.990.000₫', 'Chiếc vòng này thật xinh', 'url(./img/cosnetella.jpg)', ['Chống nước tốt', 'Khiến người khác phải nhìn chăm chú', 'Không thể rời mắt', 'Phù hợp mọi trang phục', 'Tôn lên vẻ đẹp của bạn'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/cosnetella.jpg"
+              alt="Khuyên celeb"
+              style="width: 100%; height: 100%; object-fit: cover"
+            /></div>
+          <!-- <div
+            class="product-image"
+            style="
+              background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            "
+          >
+            🎧
+          </div> -->
+          <div class="product-info">
+            <div class="product-name">Vòng cosnetella</div>
+            <div class="product-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="product-footer">
+              <div class="price">5.990.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Vòng cosnetella')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="vòng day evil eye"
+          onclick="openProductModal('Vòng day evil eye', '', '6.990.000₫', 'Nhiều màu sắc tha hồ mà lựa', 'url(./img/day-evil-eye.jpg)', ['Tích hợp sẳn hợp chất xinh đẹp', 'Đo nhịp tim người xung quanh', 'Chống sốc', 'Bao nhiêu ngày yêu em'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/day-evil-eye.jpg "
+              alt="Vong alice"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Vòng day evil eye</div>
+            <div class="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio!</div>
+            <div class="product-footer">
+              <div class="price">6.990.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Vòng day evil eye')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="vòng tay"
+          onclick="openProductModal('Vòng tay', '', '2.490.000₫', 'Nó bị xinh ấy ạ', 'url(./img/vong-cung.jpg)', ['Kiểu dáng trẻ trung', 'Nỗi bật những điều không tưởng'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/vong-cung.jpg "
+              alt="Vong alice"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Vòng tay</div>
+            <div class="product-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, laborum! Expedita.</div>
+            <div class="product-footer">
+              <div class="price">2.490.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Vòng tay')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="Dây connexus"
+          onclick="openProductModal('Dây connexus', '', '3.290.000₫', 'Đây chuyền chuyên nghiệp với độ chính xác cao', 'url(./img/day-connexus.jpg)', ['Hình mẫu lý tưởng', 'Đẳng cấp vượt trội', 'Thu hút ánh nhìn', 'Trọng lượng nhẹ tấm vóc lớn'])"
+        >
+          <div class="product-image">
+            <img
+              src="./img/day-connexus.jpg "
+              alt="Vong alice"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Dây Connexus</div>
+            <div class="product-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non illum rem dignissimos ab ratione unde eligendi deserunt qui excepturi, similique voluptatem esse cupiditate porro dicta quod inventore ullam veritatis!</div>
+            <div class="product-footer">
+              <div class="price">1.290.000₫</div>
+              <button
+                class="add-to-cart"
+                onclick="event.stopPropagation(); addToCart('Dây connexus')"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="no-results" id="noResults" style="display: none">
+        Không tìm thấy sản phẩm nào 😔
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; Thỏ Swa. Mọi điều tuyệt vời.</p>
+      <p>Địa chỉ: Ha Noi | Hotline: 0354 xxxx</p>
+    </footer>
+
+    <!-- toast -->
+    <div class="toast" id="toast">✓ Đã thêm vào giỏ hàng!</div>
+    <!-- cart-modal  -->
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h2>Giỏ hàng</h2>
+          <button class="close-btn" onclick="closeCart()">&times;</button>
+        </div>
+        <div id="cartItems"></div>
+        <div id="cartFooter"></div>
+      </div>
+    </div>
+    <!-- product-modal  -->
+    <div class="product-modal" id="productModal">
+      <div class="product-modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle"></h2>
+          <button class="close-btn" onclick="closeProductModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-image" id="modalImage"></div>
+          <div class="modal-details">
+            <div class="modal-product-name" id="modalProductName"></div>
+            <div class="modal-product-desc" id="modalProductDesc"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-features">
+              <h3>Thông tin sản phẩm</h3>
+              <ul id="modalFeatures"></ul>
+            </div>
+            <div class="modal-actions">
+              <button class="modal-add-cart" id="modalAddCartBtn">
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/style.js"></script>
+    <script src="./assets/mobi.js"></script>
+  </body>
+</html>

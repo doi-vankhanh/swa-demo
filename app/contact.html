@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("kbiuy5qFKWXP3tRiv");
+    </script>
+    <link rel="stylesheet" href="../assets/contact.css" />
+    <link rel="stylesheet" href="../assets/about.css" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../img/logo.jpg"
+            alt="logo"
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 10px;
+            "
+          />
+          Arabbit shop
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="../index.html">Sản phẩm</a></li>
+          <li><a href="../app/about.html">Giới thiệu</a></li>
+        </ul>
+
+        <a href="#" class="cart-icon" onclick="openCart(event)">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </nav>
+      <!-- Hamburger menu toggle -->
+      <div class="menu-toggle"></div>
+    </header>
+
+    <div class="contact-container">
+      <h1>Liên hệ với tôi</h1>
+      <p class="subtext">Tôi luôn sẵn lòng lắng nghe 💌</p>
+
+      <form
+        id="contact-form"
+        action="mailto:dreamer.sowing.hope@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <label for="name">Họ và tên</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Nhập họ và tên của bạn"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Nhập địa chỉ email"
+          required
+        />
+
+        <label for="message">Nội dung</label>
+        <textarea
+          id="message"
+          placeholder="Viết lời nhắn của bạn..."
+          required
+        ></textarea>
+
+        <button type="submit">Gửi liên hệ</button>
+      </form>
+    </div>
+  </body>
+  
+</html>
